@@ -41,7 +41,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "GelfServiceProvider"
+                "Asseco\\Gelf\\GelfServiceProvider"
             ]
         }
     }

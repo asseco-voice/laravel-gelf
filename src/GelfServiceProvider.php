@@ -13,7 +13,6 @@ class GelfServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/asseco-gelf.php', 'asseco-gelf');
         $this->mergeConfigFrom(__DIR__ . '/../config/logging.php', 'logging.channels.gelf');
     }
 
@@ -22,8 +21,6 @@ class GelfServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->publishes([
-            __DIR__ . '/../config/asseco-gelf.php' => config_path('asseco-gelf.php'),
-        ], 'asseco-gelf-config');
+        //
     }
 }

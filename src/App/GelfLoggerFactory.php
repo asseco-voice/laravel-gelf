@@ -13,6 +13,7 @@ use Gelf\Transport\SslOptions;
 use Gelf\Transport\TcpTransport;
 use Gelf\Transport\UdpTransport;
 use Illuminate\Contracts\Container\Container;
+use Illuminate\Support\Arr;
 use InvalidArgumentException;
 use Monolog\Formatter\GelfMessageFormatter;
 use Monolog\Handler\GelfHandler;
@@ -40,32 +41,42 @@ class GelfLoggerFactory
 
     public function __invoke(array $config): Logger
     {
-        $transport = new IgnoreErrorTransportWrapper(
-            $this->getTransport(
-                $config['transport'] ?? 'udp',
-                $config['host'] ?? '127.0.0.1',
-                $config['port'] ?? 12201,
-                $config['path'] ?? null,
-                $this->enableSsl($config) ? $this->sslOptions($config['ssl_options'] ?? null) : null
-            )
-        );
+        $sslOptions = $this->enableSsl($config) ? $this->sslOptions($config['ssl_options'] ?? null) : null;
+
+        $transport = $this->initTransport($config, $sslOptions);
 
         $handler = new GelfHandler(new Publisher($transport), $this->level($config));
 
-        $handler->setFormatter(
-            new GelfMessageFormatter(
-                $config['system_name'] ?? null,
-                $config['extra_prefix'] ?? null,
-                $config['context_prefix'] ?? '',
-                $config['max_length'] ?? null
-            )
-        );
+        $handler->setFormatter($this->initFormatter($config));
 
         foreach ($this->parseProcessors($config) as $processor) {
             $handler->pushProcessor(new $processor);
         }
 
-        return new Logger($this->parseChannel($config), [$handler]);
+        return new Logger($this->parseChannel(), [$handler]);
+    }
+
+    protected function initTransport(array $config, ?SslOptions $sslOptions = null): AbstractTransport
+    {
+        return new IgnoreErrorTransportWrapper(
+            $this->getTransport(
+                $config['transport'] ?? 'event',
+                $config['host'] ?? '127.0.0.1',
+                $config['port'] ?? 12201,
+                $config['path'] ?? null,
+                $sslOptions
+            )
+        );
+    }
+
+    protected function initFormatter(array $config): GelfMessageFormatter
+    {
+        return new GelfMessageFormatter(
+            $config['system_name'] ?? null,
+            $config['extra_prefix'] ?? null,
+            $config['context_prefix'] ?? '',
+            $config['max_length'] ?? null
+        );
     }
 
     /**
@@ -149,37 +160,15 @@ class GelfLoggerFactory
     {
         $processors = [];
 
-        if (isset($config['processors']) && is_array($config['processors'])) {
-            foreach ($config['processors'] as $processor) {
-                $processors[] = $processor;
-            }
+        foreach (Arr::get($config, 'processors', []) as $processor) {
+            $processors[] = $processor;
         }
 
         return $processors;
     }
 
-    /**
-     * Extract the log channel from the given configuration.
-     *
-     * @param array $config
-     * @return string
-     */
-    protected function parseChannel(array $config): string
+    protected function parseChannel(): string
     {
-        if (!isset($config['name'])) {
-            return $this->getFallbackChannelName();
-        }
-
-        return $config['name'];
-    }
-
-    /**
-     * Get fallback log channel name.
-     *
-     * @return string
-     */
-    protected function getFallbackChannelName(): string
-    {
-        return $this->app->bound('env') ? $this->app->environment() : 'production';
+        return config('app.name') ?: 'Unknown service';
     }
 }

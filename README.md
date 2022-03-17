@@ -2,7 +2,7 @@
 
 # Laravel GELF
 
-This package enables GELF logging via TCP, UDP, HTTP or STOMP.
+This package enables GELF logging via TCP, UDP, HTTP or event.
 
 All credits go to the [original package](https://github.com/hedii/laravel-gelf-logger). 
 

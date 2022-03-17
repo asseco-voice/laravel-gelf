@@ -72,7 +72,7 @@ class GelfLoggerFactory
     protected function initFormatter(array $config): GelfMessageFormatter
     {
         return new GelfMessageFormatter(
-            $config['system_name'] ?? null,
+            $this->parseChannel(),
             $config['extra_prefix'] ?? null,
             $config['context_prefix'] ?? '',
             $config['max_length'] ?? null
@@ -169,6 +169,9 @@ class GelfLoggerFactory
 
     protected function parseChannel(): string
     {
-        return config('app.name') ?: 'Unknown service';
+        $serviceName = config('app.name') ?: 'Unknown service';
+        $ip = request()->ip();
+
+        return "$ip $serviceName";
     }
 }

@@ -55,7 +55,7 @@ return [
      * This option determines the port on which the gelf
      * receiver host is listening.
      */
-    'port'           => env('GELF_PORT', 12201),
+    'port'           => (int)env('GELF_PORT', 12201),
 
     /**
      * This option determines the path used for the HTTP
@@ -63,13 +63,6 @@ return [
      * is used.
      */
     'path'           => null,
-
-    /**
-     * This option determines the system name sent with the
-     * message in the 'source' field. When forgotten or set to null,
-     * the current hostname is used.
-     */
-    'system_name'    => null,
 
     /**
      * This option determines the prefix for 'extra' fields

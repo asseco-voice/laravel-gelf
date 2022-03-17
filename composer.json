@@ -1,0 +1,34 @@
+{
+    "name": "asseco-voice/laravel-gelf",
+    "description": "Laravel support for GELF logging",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "laravel/framework": "^8.0",
+        "asseco-voice/laravel-common": "~0.1",
+        "graylog2/gelf-php": "^1.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4",
+        "mockery/mockery": "^1.3.1",
+        "fakerphp/faker": "^1.9.1",
+        "orchestra/testbench": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Asseco\\Gelf\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Asseco\\Gelf\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GelfServiceProvider"
+            ]
+        }
+    }
+}

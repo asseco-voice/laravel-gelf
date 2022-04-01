@@ -16,7 +16,7 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "asseco-voice/laravel-common": "~0.1",
-        "asseco-voice/laravel-stomp": "^0.3.0",
+        "asseco-voice/laravel-stomp": "^0.4.0",
         "graylog2/gelf-php": "^1.6",
         "laravel/framework": "^8.0"
     },

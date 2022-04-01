@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Asseco\Gelf\App\Transports;
 
-use Asseco\Gelf\App\Events\LoggingEvent;
 use Gelf\MessageInterface as Message;
 use Gelf\Transport\AbstractTransport;
 
@@ -14,5 +13,7 @@ class EventTransport extends AbstractTransport
     {
         $event = config('logging.channels.gelf.event.class');
         $event::dispatch($message);
+
+        return 1;
     }
 }

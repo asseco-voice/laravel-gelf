@@ -83,11 +83,11 @@ class GelfLoggerFactory
      * Get the transport class based on the
      * config value.
      *
-     * @param string $transport
-     * @param string $host
-     * @param int $port
-     * @param string|null $path
-     * @param SslOptions|null $sslOptions
+     * @param  string  $transport
+     * @param  string  $host
+     * @param  int  $port
+     * @param  string|null  $path
+     * @param  SslOptions|null  $sslOptions
      * @return AbstractTransport
      */
     protected function getTransport(string $transport, string $host, int $port, ?string $path = null, ?SslOptions $sslOptions = null): AbstractTransport
@@ -135,8 +135,9 @@ class GelfLoggerFactory
     /**
      * Parse the string level into a Monolog constant.
      *
-     * @param array $config
+     * @param  array  $config
      * @return int
+     *
      * @throws InvalidArgumentException
      */
     protected function level(array $config): int
@@ -153,7 +154,7 @@ class GelfLoggerFactory
     /**
      * Extract the processors from the given configuration.
      *
-     * @param array $config
+     * @param  array  $config
      * @return array
      */
     protected function parseProcessors(array $config): array

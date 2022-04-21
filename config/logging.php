@@ -25,12 +25,12 @@ return [
 
     /**
      * Channel over which the messages are transported.
-     * Available options: udp, tcp, http or event
+     * Available options: udp, tcp, http or event.
      */
     'transport'      => env('GELF_TRANSPORT', 'event'),
 
     /**
-     * Event transport specific options
+     * Event transport specific options.
      */
     'event'          => [
         /**
@@ -40,7 +40,7 @@ return [
         'class' => LoggingEvent::class,
 
         /**
-         * Queue where the event should be dispatched
+         * Queue where the event should be dispatched.
          */
         'queue' => 'gelf_logs',
     ],
@@ -55,7 +55,7 @@ return [
      * This option determines the port on which the gelf
      * receiver host is listening.
      */
-    'port'           => (int)env('GELF_PORT', 12201),
+    'port'           => (int) env('GELF_PORT', 12201),
 
     /**
      * This option determines the path used for the HTTP
@@ -80,7 +80,7 @@ return [
      * This option determines the maximum length per message
      * field. When forgotten or set to null, the default value of
      * \Monolog\Formatter\GelfMessageFormatter::DEFAULT_MAX_LENGTH is
-     * used (currently this value is 32766)
+     * used (currently this value is 32766).
      */
     'max_length'     => null,
 

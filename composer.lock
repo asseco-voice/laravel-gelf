@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e70a3e69d4fe8f4dda506f9b7deea7c9",
+    "content-hash": "acd6ae88949fb5c0d4433f80eee3b35b",
     "packages": [
         {
             "name": "asseco-voice/laravel-blueprint-audit",
@@ -117,22 +117,21 @@
         },
         {
             "name": "asseco-voice/laravel-stomp",
-            "version": "v1.0.0",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/asseco-voice/laravel-stomp.git",
-                "reference": "ed607f0a9ef6feea3f9f4b41458545015a71d9f4"
+                "reference": "67b16f4a5c331259b29a1d739857415159a031ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asseco-voice/laravel-stomp/zipball/ed607f0a9ef6feea3f9f4b41458545015a71d9f4",
-                "reference": "ed607f0a9ef6feea3f9f4b41458545015a71d9f4",
+                "url": "https://api.github.com/repos/asseco-voice/laravel-stomp/zipball/67b16f4a5c331259b29a1d739857415159a031ff",
+                "reference": "67b16f4a5c331259b29a1d739857415159a031ff",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "laravel/framework": "^9.0",
-                "laravel/horizon": "^5.0",
                 "php": "^8.0",
                 "stomp-php/stomp-php": "^5.0"
             },
@@ -169,9 +168,9 @@
             ],
             "support": {
                 "issues": "https://github.com/asseco-voice/laravel-stomp/issues",
-                "source": "https://github.com/asseco-voice/laravel-stomp/tree/v1.0.0"
+                "source": "https://github.com/asseco-voice/laravel-stomp/tree/v2.0.0"
             },
-            "time": "2022-04-27T06:33:43+00:00"
+            "time": "2022-08-18T12:31:52+00:00"
         },
         {
             "name": "brick/math",
@@ -973,83 +972,6 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2022-04-19T15:01:23+00:00"
-        },
-        {
-            "name": "laravel/horizon",
-            "version": "v5.9.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/horizon.git",
-                "reference": "9dfcc748ce30a5b97c538b7884f5b4afb75e1973"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/9dfcc748ce30a5b97c538b7884f5b4afb75e1973",
-                "reference": "9dfcc748ce30a5b97c538b7884f5b4afb75e1973",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-pcntl": "*",
-                "ext-posix": "*",
-                "illuminate/contracts": "^8.17|^9.0",
-                "illuminate/queue": "^8.17|^9.0",
-                "illuminate/support": "^8.17|^9.0",
-                "nesbot/carbon": "^2.17",
-                "php": "^7.3|^8.0",
-                "ramsey/uuid": "^4.0",
-                "symfony/error-handler": "^5.0|^6.0",
-                "symfony/process": "^5.0|^6.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^6.0|^7.0",
-                "phpunit/phpunit": "^9.0",
-                "predis/predis": "^1.1"
-            },
-            "suggest": {
-                "ext-redis": "Required to use the Redis PHP driver.",
-                "predis/predis": "Required when not using the Redis PHP driver (^1.1)."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Laravel\\Horizon\\HorizonServiceProvider"
-                    ],
-                    "aliases": {
-                        "Horizon": "Laravel\\Horizon\\Horizon"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Horizon\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Dashboard and code-driven configuration for Laravel queues.",
-            "keywords": [
-                "laravel",
-                "queue"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.9.6"
-            },
-            "time": "2022-04-07T08:34:46+00:00"
         },
         {
             "name": "laravel/serializable-closure",

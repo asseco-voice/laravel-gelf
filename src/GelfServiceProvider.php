@@ -13,7 +13,7 @@ class GelfServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/logging.php', 'logging.channels.gelf');
+        $this->mergeConfigFrom(__DIR__ . '/../config/logging.php', 'logging.channels.graylog');
     }
 
     /**

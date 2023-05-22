@@ -11,7 +11,7 @@ class EventTransport extends AbstractTransport
 {
     public function send(Message $message)
     {
-        $event = config('logging.channels.gelf.event.class');
+        $event = config('logging.channels.graylog.event.class');
         $event::dispatch($message);
 
         return 1;

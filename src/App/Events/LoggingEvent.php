@@ -28,7 +28,7 @@ class LoggingEvent implements ShouldBroadcast, HasRawData
 
     public function broadcastQueue()
     {
-        return config('logging.channels.gelf.event.queue');
+        return config('logging.channels.graylog.event.queue');
     }
 
     public function broadcastOn()

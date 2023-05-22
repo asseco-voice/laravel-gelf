@@ -170,9 +170,6 @@ class GelfLoggerFactory
 
     protected function parseChannel(): string
     {
-        $serviceName = config('app.name') ?: 'Unknown service';
-        $ip = request()->ip();
-
-        return "$ip $serviceName";
+        return config('app.name') ?: 'Unknown service';
     }
 }

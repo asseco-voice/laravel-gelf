@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Asseco\RemoteRelations\Tests;
+namespace Asseco\Gelf\Tests;
 
-use Asseco\RemoteRelations\GelfServiceProvider;
+use Asseco\Gelf\GelfServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {

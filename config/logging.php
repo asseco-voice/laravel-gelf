@@ -27,7 +27,7 @@ return [
      * Channel over which the messages are transported.
      * Available options: udp, tcp, http or event.
      */
-    'transport'      => env('GELF_TRANSPORT', 'event'),
+    'transport'      => env('GRAYLOG_TRANSPORT', 'event'),
 
     /**
      * Event transport specific options.
@@ -49,13 +49,13 @@ return [
      * This option determines the host that will receive the
      * gelf log messages.
      */
-    'host'           => env('GELF_HOST', 'graylog'),
+    'host'           => env('GRAYLOG_HOST', 'graylog'),
 
     /**
      * This option determines the port on which the gelf
      * receiver host is listening.
      */
-    'port'           => (int) env('GELF_PORT', 12201),
+    'port'           => (int) env('GRAYLOG_PORT', 12201),
 
     /**
      * This option determines the path used for the HTTP

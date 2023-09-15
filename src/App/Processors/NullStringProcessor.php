@@ -11,7 +11,7 @@ class NullStringProcessor
     /**
      * Transform a "NULL" string record into a null value.
      *
-     * @param LogRecord $record
+     * @param  LogRecord  $record
      * @return LogRecord
      */
     public function __invoke(LogRecord $record): LogRecord

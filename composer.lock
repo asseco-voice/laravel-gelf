@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d4a3e406289232fe4c53b25ccf69d18",
+    "content-hash": "5941f57e5e9abd3b86e2ca3a7303a5ff",
     "packages": [
         {
             "name": "asseco-voice/laravel-blueprint-audit",
@@ -117,16 +117,16 @@
         },
         {
             "name": "asseco-voice/laravel-stomp",
-            "version": "v3.0.0",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/asseco-voice/laravel-stomp.git",
-                "reference": "9b2c0f8349a2daa1e11e15b3199c00effd128033"
+                "reference": "d7ec135b558f8b25494e3e1a59a29adfffe107d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asseco-voice/laravel-stomp/zipball/9b2c0f8349a2daa1e11e15b3199c00effd128033",
-                "reference": "9b2c0f8349a2daa1e11e15b3199c00effd128033",
+                "url": "https://api.github.com/repos/asseco-voice/laravel-stomp/zipball/d7ec135b558f8b25494e3e1a59a29adfffe107d4",
+                "reference": "d7ec135b558f8b25494e3e1a59a29adfffe107d4",
                 "shasum": ""
             },
             "require": {
@@ -168,9 +168,9 @@
             ],
             "support": {
                 "issues": "https://github.com/asseco-voice/laravel-stomp/issues",
-                "source": "https://github.com/asseco-voice/laravel-stomp/tree/v3.0.0"
+                "source": "https://github.com/asseco-voice/laravel-stomp/tree/v4.0.0"
             },
-            "time": "2023-08-08T08:15:03+00:00"
+            "time": "2024-05-14T13:29:51+00:00"
         },
         {
             "name": "brick/math",

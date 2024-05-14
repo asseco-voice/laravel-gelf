@@ -6,9 +6,9 @@ use Asseco\Gelf\App\Processors\NullStringProcessor;
 use Asseco\Gelf\App\Processors\RenameIdFieldProcessor;
 
 return [
-    'driver'         => 'custom',
-    'via'            => GelfLoggerFactory::class,
-    'level'          => 'debug',
+    'driver' => 'custom',
+    'via' => GelfLoggerFactory::class,
+    'level' => 'debug',
 
     /**
      * Processors that should be pushed to the handler.
@@ -17,7 +17,7 @@ return [
      * data. Each processor must be a callable or an object with an
      * __invoke method: see monolog documentation about processors.
      */
-    'processors'     => [
+    'processors' => [
         NullStringProcessor::class,
         RenameIdFieldProcessor::class,
         // ...
@@ -27,12 +27,12 @@ return [
      * Channel over which the messages are transported.
      * Available options: udp, tcp, http or event.
      */
-    'transport'      => env('GRAYLOG_TRANSPORT', 'event'),
+    'transport' => env('GRAYLOG_TRANSPORT', 'event'),
 
     /**
      * Event transport specific options.
      */
-    'event'          => [
+    'event' => [
         /**
          * Event to be triggered. If you want to override this behavior, be sure your event
          * implements Asseco\Stomp\Queue\Contracts\HasRawData interface.
@@ -49,26 +49,26 @@ return [
      * This option determines the host that will receive the
      * gelf log messages.
      */
-    'host'           => env('GRAYLOG_HOST', 'graylog'),
+    'host' => env('GRAYLOG_HOST', 'graylog'),
 
     /**
      * This option determines the port on which the gelf
      * receiver host is listening.
      */
-    'port'           => (int) env('GRAYLOG_PORT', 12201),
+    'port' => (int) env('GRAYLOG_PORT', 12201),
 
     /**
      * This option determines the path used for the HTTP
      * transport. When forgotten or set to null, default path '/gelf'
      * is used.
      */
-    'path'           => null,
+    'path' => null,
 
     /**
      * This option determines the prefix for 'extra' fields
      * from the Monolog record.
      */
-    'extra_prefix'   => null,
+    'extra_prefix' => null,
 
     /**
      * This option determines the prefix for 'context' fields
@@ -82,25 +82,25 @@ return [
      * \Monolog\Formatter\GelfMessageFormatter::DEFAULT_MAX_LENGTH is
      * used (currently this value is 32766).
      */
-    'max_length'     => null,
+    'max_length' => null,
 
     /**
      * This option enables or disable ssl on TCP or HTTP
      * transports.
      */
-    'ssl'            => false,
+    'ssl' => false,
 
     // If ssl is enabled, the following configuration is used.
-    'ssl_options'    => [
+    'ssl_options' => [
         // Enable or disable the peer certificate check.
-        'verify_peer'       => true,
+        'verify_peer' => true,
 
         // Path to a custom CA file (eg: "/path/to/ca.pem").
-        'ca_file'           => null,
+        'ca_file' => null,
 
         // List of ciphers the SSL layer may use, formatted as
         // specified in ciphers(1).
-        'ciphers'           => null,
+        'ciphers' => null,
 
         // Whether self-signed certificates are allowed.
         'allow_self_signed' => false,

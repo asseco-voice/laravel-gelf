@@ -24,13 +24,13 @@ class GelfLoggerFactory
     protected Container $app;
 
     protected array $logLevels = [
-        'debug'     => Logger::DEBUG,
-        'info'      => Logger::INFO,
-        'notice'    => Logger::NOTICE,
-        'warning'   => Logger::WARNING,
-        'error'     => Logger::ERROR,
-        'critical'  => Logger::CRITICAL,
-        'alert'     => Logger::ALERT,
+        'debug' => Logger::DEBUG,
+        'info' => Logger::INFO,
+        'notice' => Logger::NOTICE,
+        'warning' => Logger::WARNING,
+        'error' => Logger::ERROR,
+        'critical' => Logger::CRITICAL,
+        'alert' => Logger::ALERT,
         'emergency' => Logger::EMERGENCY,
     ];
 
